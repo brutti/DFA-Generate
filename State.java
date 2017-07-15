@@ -9,6 +9,8 @@ class State {
         this.label = label;
         this.start = start;
         this.end   = end;
+        this.setStart(this.start);
+        this.setEnd(this.end);
     }
 
     public String getLabel() {
@@ -22,6 +24,9 @@ class State {
         return this.start;
     }
     public void setStart(boolean s) {
+        if(this.start) {
+            this.label = ("->").concat(this.label);
+        }
         this.start = s;
     }
 
@@ -29,6 +34,9 @@ class State {
         return this.end;
     }
     public void setEnd(boolean e) {
+        if(this.end) {
+            this.label = ("*").concat(this.label);
+        }
         this.end = e;
     }
 
